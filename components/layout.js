@@ -23,26 +23,31 @@ export default function Layout({ children }) {
                         <Nav>
                             <NavItem>
                                 <Link href="/" passHref>
-                                    <NavLink><a>Home</a></NavLink>
+                                    <NavLink>Home</NavLink>
                                 </Link>
                             </NavItem>
                             <NavItem>
                                 <Link href="/photopicker" passHref>
-                                    <NavLink><a>Photo Picker!</a></NavLink> 
+                                    <NavLink>Photo Picker!</NavLink> 
                                 </Link>
                             </NavItem>
                             <NavItem>
                                 <Link href="/about" passHref>
-                                    <NavLink><a>About</a></NavLink> 
+                                    <NavLink>About</NavLink> 
+                                </Link>
+                            </NavItem>
+                            <NavItem>
+                                <Link href="/weather" passHref>
+                                    <NavLink>Weather</NavLink> 
                                 </Link>
                             </NavItem>
                         </Nav>
                     </Navbar>
                 </div>
                     <div className="container h-10">
-                        <body>
+                        
                             {children}
-                        </body>
+                        
                     </div>
                     <footer className="page-footer fixed-bottom py-2 bg-dark">
                         <div className="container">

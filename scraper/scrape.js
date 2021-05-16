@@ -1,8 +1,9 @@
 const express = require("express");
 const cheerio = require("cheerio");
 const puppeteer = require("puppeteer");
+const cors = require("cors");
 const app = express();
-
+app.use(cors());
 const url = "https://mars.nasa.gov/mars2020/weather/";
 const newsHeadlines = [];
 
