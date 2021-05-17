@@ -30,6 +30,7 @@ footer {
   border: 1px solid #ccc;
   width: 100%;
   background-color: #fff;
+  line-height: 2.5;
 }
 
 .weather-table thead tr {
