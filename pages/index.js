@@ -35,7 +35,7 @@ export default function Home(){
 
 
   return(
-    <Layout title="Photo of the Day">
+    <Layout title="Picture of the Day">
       <title>Home</title>
       <img
         src={photoData.url}
