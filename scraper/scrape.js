@@ -8,7 +8,10 @@ const url = "https://mars.nasa.gov/mars2020/weather/";
 const newsHeadlines = [];
 
 puppeteer
-  .launch()
+  .launch({
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  })
   .then((browser) => browser.newPage()) //new page from browser
   .then((page) => {
     return page.goto(url).then(function () {
@@ -42,6 +45,6 @@ puppeteer
 app.get("/", function (req, res) {
   res.send(newsHeadlines);
 });
-app.listen("8080");
+app.listen(process.env.PORT || "8080");
 console.log("API is running on http://localhost:8080");
 module.exports = app;
