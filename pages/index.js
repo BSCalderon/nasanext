@@ -35,7 +35,8 @@ export default function Home(){
 
 
   return(
-    <Layout>
+    <Layout title="Photo of the Day">
+      <title>Home</title>
       <img
         src={photoData.url}
         alt={photoData.title}

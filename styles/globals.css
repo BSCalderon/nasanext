@@ -4,6 +4,7 @@ body {
   padding: 0;
   margin: 0;
   max-height: 100%;
+  background-color: darkgray;
 }
 
 a {
@@ -16,11 +17,11 @@ a {
 }
 footer {
   bottom: 0;
-  position: fixed;
+
   width: 100%;
 }
 
 .photo {
   height: 611px;
-  width: 474px;
+  width: 100%;
 }

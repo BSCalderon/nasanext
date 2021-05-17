@@ -9,7 +9,7 @@ const Weather = () => {
     const[data, setData] = useState([]);
     
     useEffect(() => {
-        axios.get('http://localhost:8080/')
+        axios.get('https://agile-beach-69479.herokuapp.com/')
         .then(function (response) {
             // handle success
             console.log(response.data);
@@ -22,7 +22,7 @@ const Weather = () => {
     
   return (
       <>  
-      <Layout>
+      <Layout title="Weather">
           <h2>Weather!</h2>
             <table>
                 <tbody>

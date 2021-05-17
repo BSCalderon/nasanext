@@ -24,6 +24,7 @@ const photopicker = () => {
     const[counter, setCounter] = useState(0);
 
     const fetching = () => {
+    setCounter(0);
     const apiUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?api_key=sAIiEneoM8ZdrZOmB5bfAgjGxC5qRIodPvIfhLNb&earth_date=';
     const newUrl = apiUrl.concat(startDate.toISOString().slice(0, 10));
     //console.log("string concat: ", apiUrl.concat(startDate.toISOString().slice(0, 10)))
@@ -42,14 +43,14 @@ const photopicker = () => {
   }
 
   const previousPhoto = () => {
-
+    setCounter((counter == 0) ? counter : counter - 1);
   }
   const nextPhoto = () => {
-
+    setCounter(counter + 1);
   }
   //console.log("data from photos:", photos);
     return (
-        <Layout>
+        <Layout title="Photo Picker">
             <div className="container">
                 <DatePicker 
                     selected={startDate} 
@@ -71,15 +72,15 @@ const photopicker = () => {
                 
                 <div className="container">
                     { loaded ? 
-                    <>
-                        <img className="photo" src={photos.photos[0].img_src} alt="mars"></img>
+                    <div style={{textAlign: 'center'}}>
+                        <img className="photo" src={photos.photos[counter].img_src} alt="mars"></img>
                         <br></br>
-                        <text className=" mb-2 bg-info text-white">Rover: {photos.photos[0].rover.name}</text>
+                        <text className=" mb-2 bg-info text-white">Rover: {photos.photos[counter].rover.name}</text>
                         <br></br>
-                        <text className=" mb-2 bg-info text-white">Status: {photos.photos[0].rover.status}</text>
+                        <text className=" mb-2 bg-info text-white">Status: {photos.photos[counter].rover.status}</text>
                         <br></br>
-                        <text className=" mb-2 bg-info text-white">Camera: {photos.photos[0].camera.full_name}</text>
-                    </>
+                        <text className=" mb-2 bg-info text-white">Camera: {photos.photos[counter].camera.full_name}</text>
+                    </div>
                     : 
                     <img src={'https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F765877054%2F960x0.jpg%3Ffit%3Dscale'} alt="space"></img>
                     }

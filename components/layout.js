@@ -11,7 +11,7 @@ import {
     
   } from 'reactstrap';
 
-export default function Layout({ children }) {
+export default function Layout({ children, title }) {
     return (
             <div>
                 <Head>
@@ -45,11 +45,24 @@ export default function Layout({ children }) {
                     </Navbar>
                 </div>
                     <div className="container h-10">
-                        
+                    <div class="jumbotron jumbotron-fluid">
+                <div class="contrainer">
+                    <img src = "https://api.nasa.gov/assets/img/favicons/favicon-192.png" width="150" height="150" display="block" style ={{marginTop: 0,
+                                                                                                                                            marginRight: 'auto',
+                                                                                                                                            marginBottom: 0,
+                                                                                                                                            marginLeft: 'auto',
+                                                                                                                                            display: "block"}}/>
+                    {/* <img src= "https://w7.pngwing.com/pngs/129/910/png-transparent-api-text-application-programming-interface-computer-icons-web-api-computer-programming-thumbnail.png" width="150" height="150"/> */}
+                    <h1 class="display-4" style={{textAlign: 'center'}}>{title}</h1>
+                </div>
+            </div>
                             {children}
-                        
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
                     </div>
-                    <footer className="page-footer fixed-bottom py-2 bg-dark">
+                    <footer className="page-footer  py-2 bg-dark">
                         <div className="container">
                             <span className="text-muted"><p className="text-center">NASA API</p></span>
                         </div>
